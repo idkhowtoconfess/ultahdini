@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Untuk Dini — Selamat Ulang Tahun ke-21</title>
+  <meta name="description" content="Sepucuk surat kecil dari Eiffel untuk Dini, sahabat sejak TK." />
+  <meta name="theme-color" content="#2a1830" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Caveat:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <button id="music" class="music" aria-label="Musik" hidden>
+    <span class="music__icon">♪</span><span class="music__label">musik</span>
+  </button>
+
+  <!-- ============ 1. PERMINTAAN MAAF ============ -->
+  <section class="scene scene--sorry is-active" id="s-sorry">
+    <div class="sorry">
+      <div class="sorry__cal" aria-hidden="true">
+        <div class="cal cal--yesterday"><span class="cal__top">kemarin</span><span class="cal__day">🎂</span><span class="cal__note">harusnya hari ini…</span></div>
+        <div class="cal cal--today"><span class="cal__top">hari ini</span><span class="cal__day">🥺</span><span class="cal__note">telat sehari</span></div>
+      </div>
+      <p class="eyebrow">untuk Dini, dari Eiffel</p>
+      <h1 class="sorry__title">Dini… maaf ya.</h1>
+      <p class="sorry__text">
+        Aku kelewatan satu hari ulang tahunmu. Satu hari aja, tapi rasanya nggak enak banget —
+        soalnya kamu orang yang udah nemenin aku <em>enam belas tahun</em>, dari kita masih
+        pakai seragam TK sampai sekarang sama-sama 21.
+      </p>
+      <p class="sorry__text">Telat bukan berarti lupa. Aku cuma butuh sehari lagi buat nyiapin ini. 🤍</p>
+      <p class="sorry__ask">Kamu mau maafin aku?</p>
+      <div class="sorry__btns">
+        <button class="btn btn--primary" id="forgive">Iya, aku maafin 🤍</button>
+        <button class="btn btn--ghost" id="noforgive">Nggak mau</button>
+      </div>
+      <p class="sorry__hint" id="sorryHint" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- ============ 2. KUE & LILIN ============ -->
+  <section class="scene scene--cake" id="s-cake">
+    <p class="eyebrow">makasih udah maafin 🥹</p>
+    <h2 class="big">Selamat Ulang Tahun<br /><span class="script">Dini</span></h2>
+    <div class="age"><span>2</span><span>1</span></div>
+    <div class="cake" id="cake" aria-label="Kue ulang tahun, ketuk lilin untuk meniup">
+      <div class="candles" id="candles"></div>
+      <div class="cake__layer cake__layer--top"><span class="drip"></span></div>
+      <div class="cake__layer cake__layer--mid"></div>
+      <div class="cake__layer cake__layer--base"></div>
+      <div class="cake__plate"></div>
+    </div>
+    <p class="hint" id="cakeHint">Pejamkan mata, ucapkan permohonan, lalu <strong>ketuk lilinnya</strong> satu per satu ✨</p>
+    <button class="btn btn--primary next" data-next="s-journey" hidden id="cakeNext">Lanjut, ada yang mau aku ceritain →</button>
+  </section>
+
+  <!-- ============ 3. PERJALANAN ============ -->
+  <section class="scene scene--journey" id="s-journey">
+    <p class="eyebrow">dari TK sampai 21</p>
+    <h2 class="title">Perjalanan kita</h2>
+    <p class="lede">Ketuk tiap kartu buat buka kenangannya.</p>
+
+    <ol class="timeline">
+      <li class="tl">
+        <div class="tl__age">5</div>
+        <button class="card card--tk" aria-label="Buka kenangan umur 5">
+          <div class="card__inner">
+            <div class="card__front">
+              <div class="crayon" aria-hidden="true">
+                <span>🖍️</span><span>🎒</span><span>🧃</span>
+              </div>
+              <p class="card__label">TK · umur 5</p>
+            </div>
+            <div class="card__back">
+              <p class="hand">Waktu itu kita belum ngerti apa-apa soal "sahabat". Kita cuma dua anak kecil yang duduk deketan, berbagi bekal, dan nggak tau kalau ini bakal jadi selamanya.</p>
+            </div>
+          </div>
+        </button>
+      </li>
+
+      <li class="tl">
+        <div class="tl__age">SD–SMA</div>
+        <button class="card" aria-label="Buka kenangan sekolah">
+          <div class="card__inner">
+            <div class="card__front">
+              <div class="crayon" aria-hidden="true"><span>📚</span><span>🏫</span><span>💬</span></div>
+              <p class="card__label">tumbuh bareng</p>
+            </div>
+            <div class="card__back">
+              <p class="hand">Ganti sekolah, ganti kelas, ganti temen-temen lain. Tapi entah gimana, kita selalu nemu jalan buat balik ke satu sama lain.</p>
+            </div>
+          </div>
+        </button>
+      </li>
+
+      <li class="tl">
+        <div class="tl__age">bareng geng</div>
+        <button class="card card--photo" aria-label="Buka foto bareng geng">
+          <div class="card__inner">
+            <div class="card__front polaroid">
+              <img loading="lazy" alt="Kita berenam selfie bareng, semua senyum" src="/.netlify/images?url=/img/geng.jpg&w=640&fm=webp" />
+              <p class="card__cap">reuni kecil-kecilan 🤍</p>
+            </div>
+            <div class="card__back">
+              <p class="hand">Foto ini rame, tapi aku selalu nyari kamu duluan di setiap foto. Makasih udah jadi bagian dari "rumah" yang namanya temen-temen ini.</p>
+            </div>
+          </div>
+        </button>
+      </li>
+
+      <li class="tl">
+        <div class="tl__age">nongkrong</div>
+        <button class="card card--photo" aria-label="Buka foto nongkrong">
+          <div class="card__inner">
+            <div class="card__front polaroid">
+              <img loading="lazy" alt="Kita berdua pose dengan jari, selfie di kafe" src="/.netlify/images?url=/img/selfie.jpg&w=640&fm=webp" />
+              <p class="card__cap">pose andalan</p>
+            </div>
+            <div class="card__back">
+              <p class="hand">Hal-hal kecil kayak gini — duduk, ngobrol nggak jelas, foto dengan gaya yang sama terus — ternyata yang paling aku kangenin.</p>
+            </div>
+          </div>
+        </button>
+      </li>
+
+      <li class="tl">
+        <div class="tl__age">bertiga</div>
+        <button class="card card--photo" aria-label="Buka foto bertiga">
+          <div class="card__inner">
+            <div class="card__front polaroid">
+              <img loading="lazy" alt="Kita bertiga tersenyum di depan dinding pink" src="/.netlify/images?url=/img/bertiga.jpg&w=640&fm=webp" />
+              <p class="card__cap">dinding pink & ketawa</p>
+            </div>
+            <div class="card__back">
+              <p class="hand">Setiap kali ketemu, rasanya kayak nggak ada waktu yang lewat. Kayak kita masih yang dulu, cuma lebih tinggi aja 😆</p>
+            </div>
+          </div>
+        </button>
+      </li>
+
+      <li class="tl">
+        <div class="tl__age">21</div>
+        <button class="card card--photo" aria-label="Buka foto photobox">
+          <div class="card__inner">
+            <div class="card__front polaroid">
+              <img loading="lazy" alt="Empat frame foto kita berdua dengan ekspresi lucu" src="/.netlify/images?url=/img/photobox.jpg&w=640&fm=webp" />
+              <p class="card__cap">kita, sekarang</p>
+            </div>
+            <div class="card__back">
+              <p class="hand">16 tahun kemudian, kita masih di sini. Masih konyol, masih saling nyari. Dan aku harap kita nggak pernah berubah soal itu.</p>
+            </div>
+          </div>
+        </button>
+      </li>
+    </ol>
+
+    <div class="counter">
+      <p class="counter__pre">kita udah sahabatan kira-kira</p>
+      <p class="counter__num"><span id="days">0</span></p>
+      <p class="counter__post">hari. dan aku mau nambah terus angkanya.</p>
+    </div>
+
+    <button class="btn btn--primary next" data-next="s-scratch">Masih ada lagi →</button>
+  </section>
+
+  <!-- ============ 4. GOSOK FOTO ============ -->
+  <section class="scene scene--scratch" id="s-scratch">
+    <p class="eyebrow">hadiah kecil</p>
+    <h2 class="title">Gosok buat lihat</h2>
+    <p class="lede">Usap pakai jari (atau mouse) di atas kartu ini.</p>
+    <div class="scratch" id="scratch">
+      <img alt="Kolase sembilan foto kita berdua dengan stiker lucu" src="/.netlify/images?url=/img/kolase.jpg&w=900&fm=webp" />
+      <canvas id="scratchCanvas"></canvas>
+    </div>
+    <p class="hint" id="scratchHint">&nbsp;</p>
+    <button class="btn btn--primary next" data-next="s-letter" hidden id="scratchNext">Ada surat buat kamu →</button>
+  </section>
+
+  <!-- ============ 5. SURAT ============ -->
+  <section class="scene scene--letter" id="s-letter">
+    <p class="eyebrow">dibaca pelan-pelan ya</p>
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Buka surat">
+      <div class="envelope__back"></div>
+      <div class="letter" id="letter">
+        <div class="letter__body" id="letterBody"></div>
+      </div>
+      <div class="envelope__front"></div>
+      <div class="envelope__flap"></div>
+      <div class="envelope__seal">E</div>
+    </div>
+    <p class="hint" id="envHint">Ketuk amplopnya 💌</p>
+    <button class="btn btn--primary next" data-next="s-wishes" hidden id="letterNext">Satu lagi →</button>
+  </section>
+
+  <!-- ============ 6. TOPLES DOA ============ -->
+  <section class="scene scene--wishes" id="s-wishes">
+    <p class="eyebrow">doa & janji</p>
+    <h2 class="title">Toples harapan</h2>
+    <p class="lede">Ketuk toplesnya. Ambil satu bintang setiap kali.</p>
+    <button class="jar" id="jar" aria-label="Ambil bintang dari toples">
+      <span class="jar__lid"></span>
+      <span class="jar__glass"><span class="jar__stars" id="jarStars"></span></span>
+    </button>
+    <ul class="wishes" id="wishes" aria-live="polite"></ul>
+    <button class="btn btn--primary next" data-next="s-end" hidden id="wishNext">Terakhir →</button>
+  </section>
+
+  <!-- ============ 7. PENUTUP ============ -->
+  <section class="scene scene--end" id="s-end">
+    <div class="end">
+      <div class="end__photo">
+        <img alt="Kita berdua tersenyum" src="/.netlify/images?url=/img/photobox.jpg&w=900&fm=webp" />
+      </div>
+      <h2 class="big">Thank you <span class="script">so much,</span> Dini.</h2>
+      <p class="end__text">
+        Buat 16 tahun yang udah lewat, dan buat semua tahun yang belum.
+        Selamat ulang tahun yang ke-21 — maaf telat sehari, tapi sayangnya nggak pernah telat. 🤍
+      </p>
+      <p class="end__sign">— Eiffel, sahabatmu sejak TK</p>
+      <div class="end__btns">
+        <button class="btn btn--primary" id="hug">Kirim peluk 🤗</button>
+        <button class="btn btn--ghost" id="replay">Ulang dari awal</button>
+      </div>
+      <p class="hint" id="hugCount">&nbsp;</p>
+    </div>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>
