@@ -191,7 +191,7 @@
   const pleas = [
     "yah… 🥺 coba sekali lagi?",
     "aku beneran nyesel kok…",
-    "16 tahun lho kita temenan 😭",
+    "bertahun-tahun lho kita temenan 😭",
     "nanti aku traktir deh, janji!",
     "oke tombolnya udah nyerah, kamu juga ya? 🤍",
   ];
@@ -319,23 +319,18 @@
       scratched = true;
       scratch.classList.add("is-done");
       confetti(140);
-      $("#scratchHint").textContent = "Lihat deh, kita lucu banget kan 😆🤍";
-      $("#scratchNext").hidden = false;
+      $("#scratchHint").textContent = "LLucu banget wkwk"
     }
   }
 
   /* ================= 5. letter ================= */
   const LETTER = `Dini,
 
-Selamat ulang tahun yang ke-21. Maaf ya, aku telat sehari. Aku nggak mau bikin alasan — aku cuma mau bilang kalau kamu tetap salah satu hal yang paling aku syukuri di hidupku.
+Selamat ulang tahun yang ke-21. Kita kenal dari lama banget gak sih. Dari zaman belum bisa nulis nama sendiri dengan rapi, sampai sekarang udah sama-sama 21. Belasan tahun tuh kita udah kenal. Wow, lama banget. Bosan gak wkwk.
+Makasih udah temenan samaku yaw. Makasih udah jadi temen ngobrol, ngobrolin dunia dan hidup kita yang beda tapi somehow tetap sejalan. Makasih udah tetap jadi Dini, temenku yang baik hati dan penyabar serta sholeha.
+Di umur yang baru ini, aku doain kamu selalu sehat, selalu bahagia, dan semua yang lagi kamu perjuangin pelan-pelan jadi nyata. Kalau capek, istirahat. Kalau sedih, boleh yapping.
 
-Coba deh pikir. Kita kenal dari umur 5. Dari zaman belum bisa nulis nama sendiri dengan rapi, sampai sekarang udah sama-sama 21. Enam belas tahun. Hampir seluruh hidup kita, kamu ada di situ.
-
-Makasih udah sabar sama aku. Makasih udah ketawa sama hal-hal yang cuma kita berdua yang ngerti. Makasih udah tetap tinggal, bahkan waktu hidup bikin kita sibuk dan jarang ketemu.
-
-Di umur yang baru ini, aku doain kamu selalu sehat, selalu bahagia, dan semua yang lagi kamu perjuangin pelan-pelan jadi nyata. Kalau capek, istirahat. Kalau sedih, inget kamu punya aku.
-
-Semoga kita ketemu terus, bahagia terus, sukses terus, reuni terus, dan bertemen terus — sampai nanti kita tua dan masih ngetawain foto-foto ini bareng.
+Semoga kita ketemu terus, bahagia terus, sukses terus, reuni terus, dan bertemen terus, sampai nanti kita tua dan masih ngetawain foto-foto ini bareng.
 
 Thank you so much, Dini.
 Sayang kamu, selalu. 🤍
@@ -382,7 +377,7 @@ Sayang kamu, selalu. 🤍
     ["Bahagia terus", "senyum kamu yang di foto-foto itu, jangan sampai hilang."],
     ["Sukses terus", "semua mimpi kamu, satu per satu kesampaian."],
     ["Reuni terus", "sama geng kita, setiap tahun, tanpa absen."],
-    ["Bertemen terus", "dari TK, sampai 21, sampai rambut kita putih."],
+    ["Bertemen terus", "dari kecil, sampai 21, sampai rambut kita putih."],
   ];
   const jarStars = $("#jarStars");
   WISHES.forEach((_, i) => {
