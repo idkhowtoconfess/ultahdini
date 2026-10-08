@@ -319,7 +319,8 @@
       scratched = true;
       scratch.classList.add("is-done");
       confetti(140);
-      $("#scratchHint").textContent = "LLucu banget wkwk"
+      $("#scratchHint").textContent = "LLucu banget wkwk";
+      $("#scratchNext").hidden = false;
     }
   }
 
